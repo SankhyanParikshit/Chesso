@@ -8,7 +8,10 @@ const app = express();
 
 //  http ka server vo link kiya express sa yeah server sockit chalye ga
 const server = http.createServer(app);
-const io = socket(server); //real time connection
+const io = socket(server, {
+    transports: ['polling']
+  });
+   //real time connection
 
 const chess = new Chess();
 
